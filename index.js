@@ -2,6 +2,7 @@
 // where your node app starts
 
 // init project
+require('dotenv').config();
 var express = require('express');
 var app = express();
 
@@ -25,7 +26,7 @@ app.get("/api/:date?", (req, res)=>{
   //Empty
   if(!date){
     date = new Date();
-    res.send({unix: Math.floor(date.getTime()),
+    return res.json({unix: Math.floor(date.getTime()),
       utc: date.toUTCString()})
   }
   
@@ -41,13 +42,13 @@ app.get("/api/:date?", (req, res)=>{
 
   //Invalid Date
   if(date == "Invalid Date"){
-    res.send({error: "Invalid Date"});
+    return res.json({error: "Invalid Date"});
   }
   
 
   
   // Return Date
-  res.send({unix: Math.floor(date.getTime()),
+  return res.json({unix: Math.floor(date.getTime()),
   utc: date.toUTCString()})
 
 })
