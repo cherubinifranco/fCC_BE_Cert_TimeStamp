@@ -1,46 +1,80 @@
 /****** Main Styling ******/
 
+:root{
+	--blue-dark: #112b3c;
+	--blue-light: #205375;
+	--accent: #f66b0e;
+	--white: #efefef;
+
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	color: #222;
-	background-color: #FaFaFa;
+	color: var(--white);
+	background-color: var(--blue-dark);
 	text-align: center;
-	line-height: 1.4em;
+	line-height: 1.4rem;
 }
 
+.examples{
+	justify-content: center;
+	display: flex;
+}
 .container {
-	padding: 0;
-	margin-top: 40px;
+	background-color: var(--blue-light);
+	width: min(30rem, 50%);
+	margin: 30px 30px 60px 30px;
+}
+.container2{
+	margin: auto;
+	padding: 10px;
+}
+.container3{
+	display: flex;
 }
 
-h3 {
-  margin-top: 30px;
-}
 
-hr {
-	margin: 25px;
+h1{
+	margin: 50px;
+	color: var(--accent)
+}
+h2 {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
 }
 
 .footer {
 	margin-top: 40px;
 }
 
-code {
+code, a {
   font-family: monospace;
-  padding: 2px;
-  color: black;
-  background-color: #fff;
+  padding: 5px;
+  font-size: 1rem;
+  color: var(--accent);
 }
 
-ul {
-	list-style-type: none;
+.item{
+	margin: 30px 5px 20px 5px;
+}
+.input{
+	width: min(360px);
+	border: none;
 }
 
-li {
-  margin-bottom: 0.5em;
+
+button{
+	height: 1.4rem;
+	font-size: 1.2rem;
+	background-color: var(--accent);
+	color: black;
+	border: none;
 }
 
-a {
-	color: #2574A9;
+button:hover, button:focus{
+	transition: ease 0.5s;
+	background-color: var(--blue-dark);
+	color: var(--white);
+	cursor: pointer;
 }
